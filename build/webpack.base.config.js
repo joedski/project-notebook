@@ -18,6 +18,18 @@ module.exports = {
     filename: 'js/[name].bundle.js',
   },
 
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          { loader: 'style-loader' },
+          { loader: 'css-loader' },
+        ],
+      },
+    ],
+  },
+
   plugins: [
     new CopyWebpackPlugin([
       {
