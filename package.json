@@ -1,0 +1,40 @@
+{
+  "name": "project-notebook",
+  "version": "0.0.0",
+  "description": "Project Notebook",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "run-p dev:*",
+    "dev:client": "run-p dev:client:*",
+    "dev:client:build": "webpack --watch --config build/webpack.dev.config.js",
+    "dev:client:serve": "http-server -p 8000 dist",
+    "dev:server": "nodemon src/node_modules/@@server/api",
+    "test": "run-s test:*",
+    "test:client": "echo \"Error: no test:client specified\" && exit 1",
+    "test:server": "echo \"Error: no test:server specified\" && exit 1",
+    "knex": "knex",
+    "webpack": "webpack"
+  },
+  "keywords": [
+    "project",
+    "organization",
+    "task-management",
+    "research",
+    "experiment"
+  ],
+  "author": "Joesph Sikorski <joedski@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "knex": "0.16.3",
+    "koa": "2.6.2"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "4.6.0",
+    "http-server": "0.11.1",
+    "nodemon": "1.18.9",
+    "npm-run-all": "4.1.5",
+    "webpack": "4.28.1",
+    "webpack-cli": "3.1.2"
+  }
+}
