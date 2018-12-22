@@ -7,4 +7,4 @@ services:
     image: postgres:11.1
     environment:
       POSTGRES_PASSWORD: seekrit
-
+      POSTGRES_DB: project_book
