@@ -9,11 +9,13 @@
     "dev:client": "run-p dev:client:*",
     "dev:client:build": "webpack --watch --config build/webpack.dev.config.js",
     "dev:client:serve": "http-server -p 8000 dist",
-    "dev:server": "nodemon src/node_modules/@@server/api",
+    "dev:server": "nodemon --watch src/node_modules/@@server/ src/node_modules/@@server/api",
     "test": "run-s test:*",
     "test:client": "echo \"Error: no test:client specified\" && exit 1",
     "test:server": "echo \"Error: no test:server specified\" && exit 1",
     "knex": "knex",
+    "nodemon": "nodemon",
+    "psql": "docker-compose exec db psql project_book postgres",
     "webpack": "webpack"
   },
   "keywords": [
@@ -26,8 +28,12 @@
   "author": "Joesph Sikorski <joedski@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "flyd": "0.2.8",
+    "hyperhtml": "2.23.0",
     "knex": "0.16.3",
     "koa": "2.6.2",
+    "koa-body": "4.0.6",
+    "koa-router": "7.4.0",
     "pg": "7.7.1"
   },
   "devDependencies": {
