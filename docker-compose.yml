@@ -5,6 +5,8 @@ version: '3.1'
 services:
   db:
     image: postgres:11.1
+    ports:
+      - '5432:5432'
     environment:
       POSTGRES_PASSWORD: seekrit
       POSTGRES_DB: project_book
