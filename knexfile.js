@@ -5,7 +5,8 @@ module.exports = {
   development: {
     client: 'postgresql',
     connection: {
-      host : '127.0.0.1:6543',
+      host : '127.0.0.1',
+      port : '5432',
       user : 'postgres',
       password : 'seekrit',
       database : 'project_book'
