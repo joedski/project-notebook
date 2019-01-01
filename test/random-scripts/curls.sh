@@ -16,3 +16,15 @@ curl -v $API_HOST/api/pages \
 
 # Get all pages again.
 curl -v $API_HOST/api/pages | jq
+
+# Update page 1
+curl -v -X PUT $API_HOST/api/pages/1 \
+  --header 'content-type: application/json'\
+  -d '{
+    "content": "Bwuuuuurrrrp",
+    "summary": "burp"
+  }' \
+| jq
+
+# Get page 1
+curl -v $API_HOST/api/pages/1 | jq
