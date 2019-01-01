@@ -1,6 +1,6 @@
 #!/bin/bash
 
-API_HOST=http://localhost:8001
+API_HOST=http://localhost:8000
 
 # Get all pages.
 curl -v $API_HOST/api/pages | jq
