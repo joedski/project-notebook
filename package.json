@@ -8,7 +8,6 @@
     "dev": "run-p dev:*",
     "dev:client": "run-p dev:client:*",
     "dev:client:build": "webpack --watch --config build/webpack.dev.config.js",
-    "dev:client:serve": "http-server -p 8000 dist",
     "dev:server": "nodemon --watch src/node_modules/@@server/ src/node_modules/@@server/api",
     "test": "run-s test:*",
     "test:client": "echo \"Error: no test:client specified\" && exit 1",
