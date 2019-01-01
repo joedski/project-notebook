@@ -9,6 +9,7 @@ exports.up = async function (knex, Promise) {
     table.integer('id').unsigned().notNullable()
     .comment('Page Id (Entity Id)')
     table.foreign('id').references('id').inTable('entity')
+    .onDelete('cascade')
 
     table.text('content')
     .comment('Page Content, Serialized; may not be text search friendly')
