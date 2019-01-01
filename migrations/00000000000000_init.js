@@ -7,7 +7,7 @@ exports.up = async function (knex, Promise) {
 
   await knex.schema.createTable('page', table => {
     table.integer('id').unsigned().notNullable()
-    .comment('Page Id (Entity Id)')
+    .comment('Page Id (Entity Id); this with when this was created are the unique id')
     table.foreign('id').references('id').inTable('entity')
     .onDelete('cascade')
 
@@ -18,7 +18,9 @@ exports.up = async function (knex, Promise) {
     .comment('Short summary of the contents of this page, conclusions, experiment results, etc')
 
     table.timestamp('created_at').defaultTo(knex.fn.now())
-    .comment('When this Page was created')
+    .comment('When this Page was created; this with the page id are the unique id')
+
+    table.unique(['id', 'created_at'])
   })
 };
 
